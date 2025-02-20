@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jenita! 🎉</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1ff, #ffb6c1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .page {
+            display: none;
+            padding: 20px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Main Page Styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Slideshow Styles */
+        .slideshow {
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto 40px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .nav-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ff4b8d;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: #fff;
+        }
+
+        .nav-button i {
+            font-size: 1.4em;
+        }
+
+        /* Content Card Styles */
+        .content-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Animations */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #ff4b8d;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Page -->
+    <div id="mainPage" class="page active">
+        <div class="container">
+            <h1>Happy Birthday Jenita! 🎂</h1>
+
+            <div class="slideshow" id="slideshow">
+                <div class="slide active">
+                    <img src=""C:\Users\divya\OneDrive\Desktop\jenidiv\pics\img1.jpg"" alt="Birthday Memory 1">
+                </div>
+                <div class="slide">
+                    <img src=""C:\Users\divya\OneDrive\Desktop\jenidiv\pics\img2.jpg"" alt="Birthday Memory 2">
+                </div>
+                <div class="slide">
+                    <img src=""C:\Users\divya\OneDrive\Desktop\jenidiv\pics\img3.jpg"" alt="Birthday Memory 3">
+                </div>
+                <div class="slide">
+                    <img src=""C:\Users\divya\OneDrive\Desktop\jenidiv\pics\img4.jpg"" alt="Birthday Memory 4">
+                </div>
+                
+                
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-button" onclick="showPage('wishesPage')">
+                    <i class="fas fa-heart"></i>
+                    Birthday Wishes
+                </button>
+                <button class="nav-button" onclick="showPage('poemsPage')">
+                    <i class="fas fa-feather-alt"></i>
+                    Poems
+                </button>
+                <button class="nav-button" onclick="showPage('playlistPage')">
+                    <i class="fas fa-music"></i>
+                    Playlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishes Page -->
+    <div id="wishesPage" class="page">
+        <div class="container">
+            <button class="back-button" onclick="showPage('mainPage')">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <h1>Birthday Wishes</h1>
+            <div class="content-card">
+                <p>Dear Jenita,</p>
+                <p style="margin: 20px 0;">
+                    A very happy last teen birthday jenita . 
+                    I know you won't take your birthday seriously, but you mean a lot to all , so don't forget that you are special, 
+                    if not to others you are special to me . Badly wanna see you , but time is not possible, 
+                    hopefully we will see eachother one day and i promise to give you a tight hug and will say how much I miss you . 
+                    Still now whenever I feel down , our careless and happy moments will project on my mind reminding how much precious 
+                    those moments were . Whenever you feel down or think that your alone , remember that this soul always remembers you and
+                    even if I don't have time I can make myself free to hear you out , so a reminder that this divya is always with you . 
+                    This is your day , a special day where God gave a precious friend to me . So smile 😊 for me nowwwww. 
+                    Have a blessed birthday dear 
+
+                    By your missing lovely friend 
+                    Divya Lakshmi
+                </p>
+                <p>Happy Birthday! 🎉</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Poems Page -->
+    <div id="poemsPage" class="page">
+        <div class="container">
+            <button class="back-button" onclick="showPage('mainPage')">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <h1>Birthday Poems</h1>
+            <div class="content-card">
+                <h3 style="color: #ff4b8d; margin-bottom: 20px;">A Special Birthday Wish</h3>
+                <p style="line-height: 1.8;">
+                    There was a girl who was invisible to my eyesight,<br>
+                    Only to become the girl who's memories is enough to add a smile on my face. <br>
+                    Years can pass ,things can get old and outdated , but that girl's thoughts will be as pure as water,<br>
+                    which always refresh me through tough times.<br>
+                    Manifesting a strong friendship with her.<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Playlist Page -->
+    <div id="playlistPage" class="page">
+        <div class="container">
+            <button class="back-button" onclick="showPage('mainPage')">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <h1>Birthday Playlist</h1>
+            <div class="content-card">
+                <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/track/5cfKBuE5XKtlaNOVjQwA9H?si=fddd57e5fef14616"
+                        width="100%" 
+                        height="380" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
